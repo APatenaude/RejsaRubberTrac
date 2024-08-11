@@ -50,6 +50,7 @@ public:
     Serial.println("Bluetooth client disconnected!");
     delay(100);
     BLE_server->startAdvertising();  // Use device to call startAdvertising()
+    BLE_server->startAdvertising();
     Serial.println("Bluetooth device discoverable");
   }
 };
