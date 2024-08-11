@@ -39,3 +39,19 @@ public:
   void transmit(int16_t tempMeasurements[], uint8_t mirrorTire, int16_t distance, int vBattery, int lipoPercentage);
   BLDevice();
 };
+
+class ServerCallbacks : public BLEServerCallbacks {
+public:
+  void onConnect(BLEServer* BLE_server) override {
+    Serial.println("Bluetooth client connected!");
+  }
+
+  void onDisconnect(BLEServer* BLE_server) override {
+    Serial.println("Bluetooth client disconnected!");
+#if BOARD == BOARD_ESP32_FEATHER || BOARD_ESP32_LOLIND32
+    delay(100);
+    BLE_server->startAdvertising();  // Use device to call startAdvertising()
+    Serial.println("Bluetooth device discoverable");
+#endif
+  }
+};
