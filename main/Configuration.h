@@ -66,7 +66,7 @@
 
 #if FIS_SENSOR == FIS_AMG8833
 //Untested with other sensors so only enabled for AMG8833
-#define ROTATETIRE 1  // 0 = default \
+#define ROTATETIRE 0  // 0 = default \
                       // 1 = Rotate the tire (A), making the top edge temps the outside edge temps \
                       // Can be used with mirror to rotate the other way
 #endif
