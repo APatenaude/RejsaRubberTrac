@@ -8,7 +8,7 @@
 
 
 // -- Basic device configuration, see Constants.h
-#define BOARD              BOARD_ESP32_FEATHER
+#define BOARD              BOARD_ESP32_LOLIND32
 #define DISP_DEVICE        DISP_NONE
 
 // -- Distance Sensor related settings
@@ -21,7 +21,7 @@
 
 // -- Far Infrared Sensor related settings
 
-#define FIS_SENSOR         FIS_MLX90640    // Device to use, see Constants.h    
+#define FIS_SENSOR         FIS_AMG8833    // Device to use, see Constants.h    
 
 #if BOARD == BOARD_ESP32_LOLIND32
   #define FIS_SENSOR2_PRESENT 0            // Set to 1 if second sensor on second I2C hardware bus is present (ESP32 only)
@@ -73,7 +73,7 @@
 
 // -- General settings
 
-#define DEVICENAMECODE 7      // DEFAULT is 7
+#define DEVICENAMECODE 0      // DEFAULT is 7
                           // 7 = "RejsaRubber" + four last bytes from the bluetooth MAC address
 
                           // 0 = "RejsaRubberFL" + three last bytes from the bluetooth MAC address
@@ -98,8 +98,8 @@
   #define VBAT_PIN            35
   #define GPIOLEDDIST         -1 // ESP32 only has one LED, we prefer temp updates to be signalled
   #define GPIOLEDTEMP         LED_BUILTIN  // note: system constant LED_BUILTIN does not seem to work for some of the ESP32 boards => set pin statically here in case
-  #define GPIOSDA             21 // set I2C bus GPIO pins in case of ESP32 explicitly to specific pins (different board designs have the I2C pins assigned differently)
-  #define GPIOSCL             22
+  #define GPIOSDA             23 // set I2C bus GPIO pins in case of ESP32 explicitly to specific pins (different board designs have the I2C pins assigned differently)
+  #define GPIOSCL             19
   #define GPIOSDA2            33 // set second I2C bus GPIO pins in case of ESP32 explicitly to specific pins (different board designs have the I2C pins assigned differently)
   #define GPIOSCL2            32
   #define GPIODISTSENSORXSHUT 15  // GPIO pin: A+B = Distance Sensor Shutdown
